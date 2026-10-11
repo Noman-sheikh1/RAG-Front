@@ -1,55 +1,28 @@
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import bnpParibasLogo from "../assets/BNP-Paribas.jpg";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#14326b] text-white py-12 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Left Side - About */}
-        <div className="space-y-4 md:order-1">
-          <h2 className="text-2xl font-bold text-indigo-00">DevVibe</h2>
-          <p className="text-gray-300">
-            DevVibe is a platform built for developers to connect, collaborate, and
-            build side projects together. Whether you're looking for a co-founder,
-            mentor, or teammate — this is your space.
-          </p>
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} DevVibe. Built with 💙 for developers.
-          </p>
-        </div>
-
-        {/* Right Side - Connect With Us */}
-        <div className="space-y-4 md:order-2 text-right">
-          <h2 className="text-xl font-semibold text-indigo-500">Connect With Us</h2>
-          <ul className="space-y-1 text-gray-300">
-            <li className="flex justify-end items-center gap-2">
-              <FaEnvelope /> 
-              <a href="lavaris769@gmail.com" className="hover:text-indigo-400">
-                lavaris769@gmail.com
-              </a>
-            </li>
-            <li className="flex justify-end items-center gap-2">
-              <FaLinkedin /> 
-              <a href="https://linkedin.com/in/shamsttabrez" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400">
-                Lavaris
-              </a>
-            </li>
-            <li className="flex justify-end items-center gap-2">
-              <FaInstagram /> 
-              <span className="text-gray-500">@devVibe (coming soon)</span>
-            </li>
-          </ul>
-
-          {/* Social Icons */}
-          <div className="flex justify-end gap-4 mt-2">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400">
-              <FaGithub size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400">
-              <FaLinkedin size={24} />
-            </a>
+    <footer className="w-full border-t-2 border-emerald-600 bg-white px-4 py-3 text-gray-800 sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <div className="flex items-center gap-2">
+            <img
+              src={bnpParibasLogo}
+              alt="BNP Paribas"
+              className="h-10 w-32 rounded bg-white object-cover"
+            />
+            <span className="text-xs font-medium text-gray-900 sm:text-sm">
+              The bank for a changing world
+            </span>
           </div>
+          <span className="text-xs text-gray-600">
+            Ultron — built by BNPians, for BNPians. ❤️
+          </span>
+          <span className="text-xs text-gray-500">
+            © {new Date().getFullYear()} Noman Vaseem
+          </span>
         </div>
+
       </div>
     </footer>
   );

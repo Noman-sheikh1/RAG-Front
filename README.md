@@ -1,12 +1,46 @@
-# React + Vite
+# Rag-Front
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Rag-Front is a React frontend built with Vite.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 20 LTS or newer
+- npm (included with Node.js)
 
-## Expanding the ESLint configuration
+No VS Code extension or editor plugin is required. The dependencies and versions
+are recorded in `package.json` and `package-lock.json`. See [`req.txt`](./req.txt)
+for a readable dependency checklist.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run from a fresh clone
+
+```sh
+git clone <repository-url>
+cd <repository-folder>
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite in your browser. `npm ci` installs the
+locked dependencies from `package-lock.json`; do not install each package
+separately.
+
+## Available commands
+
+```sh
+npm run dev      # Start the local development server
+npm run build    # Build the production files in dist/
+npm run preview  # Preview the production build locally
+npm run lint     # Run ESLint
+```
+
+## Main dependencies
+
+- React and React DOM
+- React Router
+- Framer Motion
+- React Icons
+- Tailwind CSS with its Vite plugin
+- DaisyUI
+- Vite and the React plugin
+
+`npm run lint` also uses ESLint and its configured plugins.

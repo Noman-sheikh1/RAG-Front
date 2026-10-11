@@ -1,0 +1,47 @@
+Rag-Front setup checklist
+=========================
+
+Project type: React + Vite (JavaScript)
+Required tools:
+- Node.js 20 LTS or newer
+- npm (included with Node.js)
+
+Fresh-clone install and run:
+1. git clone <repository-url>
+2. cd <repository-folder>
+3. npm ci
+4. npm run dev
+
+Use `npm ci` to install the exact versions recorded in package-lock.json.
+Do not use `pip install -r req.txt`: this is a Node.js project, not a Python
+project. This checklist is for people; npm reads package.json/package-lock.json.
+
+Runtime dependencies:
+- @tailwindcss/vite
+- framer-motion
+- react
+- react-dom
+- react-icons
+- react-router-dom
+- tailwindcss
+
+Development dependencies (build tooling, styling plugin, and linting):
+- @eslint/js
+- @types/react
+- @types/react-dom
+- @vitejs/plugin-react
+- daisyui
+- eslint
+- eslint-plugin-react-hooks
+- eslint-plugin-react-refresh
+- globals
+- vite
+
+No VS Code extension or editor plugin is required to install or run the app.
+The project already configures the React and Tailwind Vite plugins.
+
+Useful commands:
+- npm run dev
+- npm run build
+- npm run preview
+- npm run lint

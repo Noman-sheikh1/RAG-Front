@@ -47,12 +47,11 @@ const features = [
 
 const Home = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Welcome to DevVibe ❤️";
+  const fullText = "Welcome to Ultron";
   const speed = 100;
   const [carouselIndex, setCarouselIndex] = useState(0);
   const navigate = useNavigate();
 
-  // Typing animation
   useEffect(() => {
     let timeoutId;
     let currentIndex = 0;
@@ -67,7 +66,6 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // Carousel rotation
   useEffect(() => {
     const rotationInterval = setInterval(() => {
       setCarouselIndex((prev) => (prev + 1) % carouselItems.length);
@@ -76,10 +74,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,70,229,0.15),transparent)]"></div>
-
-      {/* Hero Section */}
+    <div className="min-h-screen rounded-b-3xl bg-[#fffdf8] text-gray-900 relative overflow-hidden">
       <div className="pt-24 pb-16 px-4 flex flex-col items-center justify-center gap-10 text-center relative z-10">
         <motion.div
           className="max-w-3xl"
@@ -87,12 +82,12 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-indigo-400 to-pink-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-emerald-700 to-green-500 bg-clip-text text-transparent">
             {displayText}
           </h1>
 
-          <p className="text-gray-400 italic text-sm mb-6">
-            Built by developers, for developers. 🌐
+          <p className="text-gray-700 italic text-sm mb-6">
+            Built by BNPians, for BNPians. ❤️
           </p>
 
           <motion.div
@@ -101,7 +96,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-lg text-white/80 font-medium mb-6"
+            className="text-lg text-gray-800 font-medium mb-6"
           >
             {carouselItems[carouselIndex]}
           </motion.div>
@@ -109,7 +104,7 @@ const Home = () => {
           <motion.div
             className="flex whitespace-nowrap mb-10"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 15, ease: "linear" }} // faster
+            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
           >
             {[...tags, ...tags].map((tag, idx) => (
               <span
@@ -123,7 +118,6 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Features Section */}
       <motion.section
         className="py-16 px-4 relative z-10"
         initial={{ opacity: 0 }}
@@ -131,68 +125,45 @@ const Home = () => {
         transition={{ delay: 0.5 }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
-            Why Choose DevTinder?
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Why Choose Ultron?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
+                className="rounded-xl border border-emerald-900/10 bg-[#fffdf8] p-6 shadow-sm transition-colors hover:bg-white"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
 
-      {/* Statistics Section */}
-      <section className="py-16 px-4 bg-gray-800/30 relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6">
-              <h3 className="text-4xl font-bold text-indigo-400 mb-2">5000+</h3>
-              <p className="text-gray-400">Active Developers</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-4xl font-bold text-indigo-400 mb-2">1000+</h3>
-              <p className="text-gray-400">Successful Matches</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-4xl font-bold text-indigo-400 mb-2">50+</h3>
-              <p className="text-gray-400">Projects Launched</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
       <section className="py-16 px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to find your perfect dev match?
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Ready to explore your knowledge base?
           </h2>
-          <p className="text-gray-400 mb-8">
-            Join thousands of developers who have already found their ideal
-            collaborators.
+          <p className="text-gray-700 mb-8">
+            Ask questions and discover useful answers from your connected
+            documents.
           </p>
           <button
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/chatbot")}
             className="btn btn-primary btn-wide text-lg shadow-lg hover:scale-105 transition-transform duration-200"
           >
-            🚀 Get Started Now
+            💬 Start Asking
           </button>
         </div>
       </section>
-
-    
     </div>
   );
 };
